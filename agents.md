@@ -1,4 +1,4 @@
-# Agents Guide (bentossell/bentossell)
+# Agents Guide (marclanson/marclanson)
 
 This is my personal website. Use this guide to add features while keeping the same stack, look, and patterns.
 

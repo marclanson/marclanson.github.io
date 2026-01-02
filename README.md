@@ -1,4 +1,4 @@
-# ben tossell
+# marc lanson
 
 builder. investor. dad.
 
@@ -19,6 +19,6 @@ factory, github, linear, granola, ghostty
 - product hunt
 
 ## contact
-- [twitter/x](https://x.com/bentossell)
-- [github](https://github.com/bentossell)
-- [linkedin](https://linkedin.com/in/ben-tossell-70453537)
+- [twitter/x](https://x.com/marclanson)
+- [github](https://github.com/marclanson)
+- [linkedin](https://linkedin.com)

@@ -111,7 +111,7 @@ const commands = {
   <span class="bold white">now:</span>
 
   • about to have baby number 3
-  • shipping on github <a href="https://github.com/bentossell" target="_blank" rel="noopener">/bentossell</a> & <a href="https://github.com/factory-ben" target="_blank" rel="noopener">/factory-ben</a>
+  • shipping on github <a href="https://github.com/marclanson" target="_blank" rel="noopener">/marclanson</a> & <a href="https://github.com/factory-ben" target="_blank" rel="noopener">/factory-ben</a>
   • investing $100k into devtools & infra
   • writing <a href="https://bensbites.com" target="_blank" rel="noopener">ben's bites</a> newsletter
 `;
@@ -139,9 +139,9 @@ const commands = {
       return `
   <span class="bold white">contact:</span>
 
-  • <a href="https://x.com/bentossell" target="_blank" rel="noopener">twitter/x</a>
+  • <a href="https://x.com/marclanson" target="_blank" rel="noopener">twitter/x</a>
   • <a href="https://linkedin.com/in/ben-tossell-70453537" target="_blank" rel="noopener">linkedin</a>
-  • <a href="https://github.com/bentossell" target="_blank" rel="noopener">github [personal]</a>
+  • <a href="https://github.com/marclanson" target="_blank" rel="noopener">github [personal]</a>
   • <a href="https://github.com/factory-ben" target="_blank" rel="noopener">github [work]</a>
   • <a href="https://discord.gg/zuudFXxg69" target="_blank" rel="noopener">droid discord</a>
 `;
@@ -340,7 +340,7 @@ const commands = {
   <span class="accent">  \\__ \\ |  __/</span>    Kernel: Coffee-powered
   <span class="accent">  |___/_|\\___|</span>    Uptime: ${getAge()} years
                     Shell: bash
-                    Terminal: bentossell
+                    Terminal: marclanson
 `,
   },
   claude: {
@@ -388,7 +388,7 @@ const commands = {
   tweet: {
     desc: "tweet at me",
     fn: () => {
-      window.open('https://twitter.com/intent/tweet?text=@bentossell%20');
+      window.open('https://twitter.com/intent/tweet?text=@marclanson%20');
       return '\n  <span class="success">opening twitter...</span>\n';
     },
   },
@@ -404,8 +404,8 @@ const commands = {
         return '\n  <span class="success">copied ben.tossell@gmail.com to clipboard</span>\n';
       }
       if (what === 'twitter' || what === 'x') {
-        await navigator.clipboard.writeText('@bentossell');
-        return '\n  <span class="success">copied @bentossell to clipboard</span>\n';
+        await navigator.clipboard.writeText('@marclanson');
+        return '\n  <span class="success">copied @marclanson to clipboard</span>\n';
       }
       return '\n  <span class="error">unknown option: ' + what + '</span>\n  try: <span class="cmd">copy email</span> or <span class="cmd">copy twitter</span>\n';
     },
@@ -425,7 +425,7 @@ const commands = {
 
   • <a href="https://archive.is/Ze3Ka" target="_blank" rel="noopener">makerpad</a> <span class="muted">['19-'21]</span> <span class="success">[acquired by zapier]</span>
   • <a href="https://bensbites.com" target="_blank" rel="noopener">ben's bites</a> <span class="muted">['22-present]</span>
-  • <a href="https://github.com/bentossell/bentossell" target="_blank" rel="noopener">this website</a> <span class="muted">tui-style personal site</span> <span class="accent">[open source]</span>
+  • <a href="https://github.com/marclanson/marclanson" target="_blank" rel="noopener">this website</a> <span class="muted">tui-style personal site</span> <span class="accent">[open source]</span>
   • <a href="https://github.com/factory-ben/feed" target="_blank" rel="noopener">feed</a> <span class="muted">linear-style social tracker</span> <span class="accent">[open source]</span>
 `;
     },
@@ -1438,7 +1438,7 @@ function getCompletions(partial) {
 
 async function fetchLatestPR() {
   try {
-    const res = await fetch('https://api.github.com/repos/bentossell/bentossell/pulls?state=closed&sort=updated&direction=desc&per_page=1');
+    const res = await fetch('https://api.github.com/repos/marclanson/marclanson/pulls?state=closed&sort=updated&direction=desc&per_page=1');
     const prs = await res.json();
     const merged = prs.find(pr => pr.merged_at);
     if (merged) {
