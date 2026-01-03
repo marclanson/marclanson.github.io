@@ -521,96 +521,6 @@ a:hover {
     border-color: var(--accent);
 }
 
-/* ===== MUSIC PLAYER ===== */
-.music-player {
-    position: fixed;
-    right: var(--space-lg);
-    bottom: var(--space-lg);
-    z-index: 1100;
-    display: none;
-    flex-direction: column;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius-md);
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    min-width: 200px;
-}
-
-.music-player.visible {
-    display: flex;
-}
-
-.music-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.music-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-}
-
-.music-title {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-primary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.music-controls {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.music-btn {
-    width: 32px;
-    height: 32px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.15s ease;
-}
-
-.music-btn svg {
-    width: 14px;
-    height: 14px;
-}
-
-.music-btn:hover {
-    background: var(--bg-hover);
-    border-color: var(--border-strong);
-}
-
-.music-btn.playing {
-    background: var(--accent);
-    color: var(--bg-primary);
-    border-color: var(--accent);
-}
-
-.music-btn .icon {
-    display: none;
-}
-
-.music-btn.playing .icon-pause {
-    display: block;
-}
-
-.music-btn:not(.playing) .icon-play {
-    display: block;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .terminal-wrapper {
@@ -641,11 +551,6 @@ a:hover {
     
     .status-center {
         display: none;
-    }
-    
-    .music-player {
-        right: var(--space-md);
-        bottom: var(--space-md);
     }
 }
 
@@ -708,8 +613,7 @@ a:hover {
 }
 
 .cmd-shortcut:focus-visible,
-.help-btn:focus-visible,
-.music-btn:focus-visible {
+.help-btn:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }

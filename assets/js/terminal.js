@@ -60,16 +60,12 @@ const commands = {
         "",
         '  <span class="muted">--- contact ---</span>',
         '  <span class="cmd">contact</span>       find me online',
-        '  <span class="cmd">lp</span>            interested in the fund',
-        '  <span class="cmd">pitch</span>         pitch your startup',
         '  <span class="cmd">tweet</span>         tweet at me',
-        '  <span class="cmd">newsletter</span>    subscribe to ben\'s bites',
         '  <span class="cmd">copy twitter</span>  copy handle to clipboard',
         "",
         '  <span class="muted">--- terminal ---</span>',
         '  <span class="cmd">theme</span>         list/change themes',
         '  <span class="cmd">clear</span>         clear the terminal',
-        '  <span class="cmd">music</span>         toggle music player',
         "",
         '  <span class="muted">tip: shift+tab to cycle themes</span>',
         "",
@@ -125,10 +121,9 @@ const commands = {
   <span class="bold white">contact:</span>
 
   • <a href="https://x.com/marclanson" target="_blank" rel="noopener">twitter/x</a>
-  • <a href="https://linkedin.com/in/ben-tossell-70453537" target="_blank" rel="noopener">linkedin</a>
+  • <a href="https://linkedin.com/in//marclanson/" target="_blank" rel="noopener">linkedin</a>
   • <a href="https://github.com/marclanson" target="_blank" rel="noopener">github [personal]</a>
-  • <a href="https://github.com/factory-ben" target="_blank" rel="noopener">github [work]</a>
-  • <a href="https://discord.gg/zuudFXxg69" target="_blank" rel="noopener">droid discord</a>
+
 `;
     },
   },
@@ -195,19 +190,6 @@ const commands = {
     fn: () => {
       window.location.href = "/blog/";
       return '\n  <span class="muted">opening blog...</span>\n';
-    },
-  },
-  music: {
-    desc: "toggle music player",
-    fn: () => {
-      const player = document.getElementById("music-player");
-      if (player) {
-        player.classList.toggle("visible");
-        return player.classList.contains("visible")
-          ? "\n  music player shown. click play to start.\n"
-          : "\n  music player hidden.\n";
-      }
-      return '\n  <span class="error">music player not available</span>\n';
     },
   },
   sudo: {
@@ -299,35 +281,9 @@ const commands = {
     desc: "ai assistant",
     fn: () => commands.claude.fn(),
   },
-  lp: {
-    desc: "interested in the fund",
-    fn: () => {
-      window.open('mailto:you@example.com?subject=Interested%20in%20the%20fund');
-      return '\n  <span class="success">opening email client...</span>\n';
-    },
-  },
-  pitch: {
-    desc: "pitch your startup",
-    fn: () => {
-      return `
-  <span class="bold white">pitch guidelines:</span>
-
-  <span class="muted">i'm looking for:</span>
-  • dev tools & infra only
-  • cli-first ideas preferred
-
-  <span class="muted">email format:</span> [stage], [tagline]
-  <span class="muted">example:</span> "Pre-seed, GitHub Copilot for databases"
-
-  <a href="mailto:you@example.com?subject=%5Bstage%5D%2C%20%5Btagline%5D" target="_blank" rel="noopener">→ click here to send pitch</a>
-
-  <span class="muted">or type</span> <span class="cmd">pitch send</span> <span class="muted">to open email</span>
-`;
-    },
-  },
   cal: {
     desc: "book a call",
-    fn: () => '\n  <span class="muted">sorry, calls are tough for me.</span>\n  try <span class="cmd">lp</span> or <span class="cmd">pitch</span> to reach out via email instead.\n',
+    fn: () => '\n  <span class="muted">sorry, calls are tough for me.</span>\n  try the contact command to reach out.\n',
   },
   book: {
     desc: "alias for cal",
@@ -358,13 +314,6 @@ const commands = {
       return '\n  <span class="error">unknown option: ' + what + '</span>\n  try: <span class="cmd">copy email</span> or <span class="cmd">copy twitter</span>\n';
     },
   },
-  newsletter: {
-    desc: "subscribe to ben's bites",
-    fn: () => {
-      window.open('https://bensbites.com', '_blank');
-      return '\n  <span class="success">opening ben\'s bites...</span>\n';
-    },
-  },
   projects: {
     desc: "notable projects",
     fn: () => {
@@ -386,12 +335,10 @@ const commands = {
       }
       const term = args.join(' ').toLowerCase();
       const searchable = [
-        { cmd: 'whoami', keywords: ['ben', 'tossell', 'factory', 'devrel', 'investor', 'twin', 'dad', 'technical'] },
-        { cmd: 'tools', keywords: ['factory', 'github', 'linear', 'granola', 'ghostty', 'droid'] },
-        { cmd: 'projects', keywords: ['makerpad', 'zapier', 'bens bites', 'bensbites', 'feed', 'website', 'open source'] },
-        { cmd: 'prev', keywords: ['makerpad', 'sequoia', 'a16z', 'scout', 'product hunt'] },
+        { cmd: 'whoami', keywords: ['marc', 'lanson', 'non-technical'] },
+        { cmd: 'tools', keywords: ['factory', 'github', 'droid'] },
         { cmd: 'models', keywords: ['opus', 'sonnet', 'gpt', 'codex', 'claude', 'ai', 'model'] },
-        { cmd: 'contact', keywords: ['twitter', 'linkedin', 'github', 'discord', 'email', 'social'] },
+        { cmd: 'contact', keywords: ['twitter', 'linkedin', 'github', 'email', 'social'] },
       ];
       const matches = searchable.filter(s => s.keywords.some(k => k.includes(term) || term.includes(k)));
       if (matches.length === 0) {
