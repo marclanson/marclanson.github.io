@@ -54,7 +54,6 @@ const commands = {
         "",
         '  <span class="muted">--- content ---</span>',
         '  <span class="cmd">tools</span>         tools i use daily',
-        '  <span class="cmd">models</span>        ai models i use',
         '  <span class="cmd">blog</span>          read the blog',
         '  <span class="cmd">search [term]</span> search site content',
         "",
@@ -124,7 +123,6 @@ const commands = {
 
   • <a href="https://x.com/marclanson" target="_blank" rel="noopener">twitter/x</a>
   • <a href="https://linkedin.com/in//marclanson/" target="_blank" rel="noopener">linkedin</a>
-  • <a href="https://github.com/marclanson" target="_blank" rel="noopener">github [personal]</a>
 
 `;
     },
@@ -171,19 +169,8 @@ const commands = {
   <span class="bold white">tools:</span>
 
   • <a href="https://factory.ai" target="_blank" rel="noopener">Factory</a> <span class="accent">[droid]</span>
+  • <a href="https://cursor.com/" target="_blank" rel="noopener">Cursor</a>
   • <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-`;
-    },
-  },
-  models: {
-    desc: "ai models i use",
-    fn: () => {
-      return `
-  <span class="bold white">models:</span>
-
-  • opus 4.5 <span class="muted">[default model]</span>
-  • sonnet 4.5 <span class="muted">[usual daily driver]</span>
-  • gpt 5.1-codex <span class="muted">[bug fixes/code review]</span>
 `;
     },
   },
@@ -337,7 +324,6 @@ const commands = {
       const searchable = [
         { cmd: 'whoami', keywords: ['marc', 'lanson', 'non-technical'] },
         { cmd: 'tools', keywords: ['factory', 'github', 'droid'] },
-        { cmd: 'models', keywords: ['opus', 'sonnet', 'gpt', 'codex', 'claude', 'ai', 'model'] },
         { cmd: 'contact', keywords: ['twitter', 'linkedin', 'github', 'email', 'social'] },
       ];
       const matches = searchable.filter(s => s.keywords.some(k => k.includes(term) || term.includes(k)));
@@ -355,7 +341,7 @@ const commands = {
     desc: "ultra-short bio",
     fn: () => {
       return `
-  <span class="bold white">marc lanson</span> — reengineering finaancial ops with ai.
+  <span class="bold white">marc lanson</span> — reengineering financial ops with ai.
   prev: 25+ years in financial services operations.
 `;
     },
