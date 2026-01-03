@@ -35,7 +35,7 @@ const vibes = [
 ];
 
 // Available themes
-const themes = ["midnight", "phosphor", "contrast"];
+const themes = ["midnight", "contrast", "as400"];
 
 // Commands registry
 const commands = {
@@ -77,16 +77,18 @@ const commands = {
     desc: "who is marc lanson",
     fn: () => {
       return `
-  <span class="bold white">marc lanson  director of operations</span>
+  <span class="bold white">marc lanson  financial services operations specialist</span>
+  technically non-technical, but loves to code and build.
 
   <span class="bold white">experience:</span>
   macquarie bank, nomura, barclays, socgen, goldman sachs
-
+  sydney, singapore, hong kong, london, tokyo
+ 
   <span class="bold white">expertise:</span>
   automation, regulatory compliance, financial management,
   operational risk, project management, process improvement,
   product ownership, data analytics, technology innovation,
-  vendor oversight, executive leadership, governance
+  vendor oversight, executive leadership, governance, ai, agents
 
   <span class="bold white">products:</span>
   listed derivatives, otc clearing, fx, prime brokerage,
@@ -320,7 +322,7 @@ const commands = {
       return `
   <span class="bold white">projects:</span>
 
-  • <a href="https://github.com/marclanson/marclanson" target="_blank" rel="noopener">this website</a> <span class="muted">tui-style personal site</span> <span class="accent">[open source]</span>
+  • <a href="https://github.com/marclanson/marclanson" target="_blank" rel="noopener">this website</a> <span class="muted">terminal user interface style personal site</span> <span class="accent">[open source]</span>
 
 `;
     },
@@ -353,8 +355,8 @@ const commands = {
     desc: "ultra-short bio",
     fn: () => {
       return `
-  <span class="bold white">marc lanson</span> — short tagline about you.
-  prev: add a brief previous work/experience line.
+  <span class="bold white">marc lanson</span> — reengineering finaancial ops with ai.
+  prev: 25+ years in financial services operations.
 `;
     },
   },

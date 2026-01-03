@@ -55,33 +55,6 @@
     --title-btn-max: #27c93f;
 }
 
-/* ===== THEME: PHOSPHOR (Classic Green CRT) ===== */
-.theme-phosphor {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #0f0f0f;
-    --bg-tertiary: #141414;
-    --bg-hover: #1a1a1a;
-    
-    --text-primary: #33ff33;
-    --text-secondary: #22cc22;
-    --text-muted: #118811;
-    
-    --accent: #00ff00;
-    --accent-hover: #44ff44;
-    
-    --border: #1a3a1a;
-    --border-strong: #225522;
-    
-    --success: #00ff00;
-    --error: #ff3333;
-    --warning: #ffff33;
-    --link: #33ffff;
-    
-    --title-btn-close: #ff3333;
-    --title-btn-min: #ffff33;
-    --title-btn-max: #33ff33;
-}
-
 /* ===== THEME: HIGH CONTRAST ===== */
 .theme-contrast {
     --bg-primary: #000000;
@@ -93,8 +66,8 @@
     --text-secondary: #cccccc;
     --text-muted: #888888;
     
-    --accent: #ffffff;
-    --accent-hover: #ffffff;
+    --accent: #FFFF00;
+    --accent-hover: #FFFF00;
     
     --border: #333333;
     --border-strong: #444444;
@@ -107,6 +80,52 @@
     --title-btn-close: #ff0000;
     --title-btn-min: #ffff00;
     --title-btn-max: #00ff00;
+}
+
+/* ===== THEME: AS/400 (IBM 5250 Terminal Style) ===== */
+/* Key characteristic: Absolute pure black backgrounds.
+   Introduction of Cyan/Turquoise which is typical for input fields
+   on 5250 terminals, contrasted with standard terminal green.
+*/
+.theme-as400 {
+    /* BACKGROUNDS: Stark, absolute black. No subtle gray gradations. */
+    --bg-primary: #000000;
+    --bg-secondary: #000000; /* AS/400 screens are usually flat black throughout */
+    --bg-tertiary: #080808; /* Only a tiny step up for extreme depth if needed */
+
+    /* HOVER: Simulating a "block cursor" or reverse video effect.
+       Instead of getting lighter, we use a dark green block background. */
+    --bg-hover: #004400;
+
+    /* TEXT - The core AS/400 Palette */
+    /* Primary: A slightly flatter, classic IBM green (less neon than the original theme) */
+    --text-primary: #00cf00;
+    /* Secondary: THE CRITICAL CHANGE. AS/400 uses Cyan/Turquoise for inputs/labels. */
+    --text-secondary: #33e0e0;
+    /* Muted: Just a dimmer green */
+    --text-muted: #007700;
+
+    /* ACCENTS */
+    /* Using the Cyan color as the main accent to highlight active elements */
+    --accent: #33e0e0;
+    /* Hover changes to pure "High Intensity" White, common on terminals */
+    --accent-hover: #ffffff;
+
+    /* BORDERS */
+    /* Borders should be subtle or the same color as text, not glowing outlines */
+    --border: #005500;
+    --border-strong: #33e0e0; /* Strong borders take the cyan highlight color */
+
+    /* STATUS COLORS: A flatter, limited hardware palette */
+    --success: #00cf00;
+    --error: #cf0000; /* A deeper, darker brick red, not bright neon */
+    --warning: #cfcf00; /* A flat mustard/hardware yellow */
+    --link: #33e0e0; /* Links act like input fields (Cyan) */
+
+    /* Window buttons flattened to match the palette */
+    --title-btn-close: #cf0000;
+    --title-btn-min: #cfcf00;
+    --title-btn-max: #00cf00;
 }
 
 /* ===== BASE STYLES ===== */
