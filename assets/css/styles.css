@@ -488,34 +488,236 @@ a:hover {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .terminal-wrapper {
-        padding: var(--space-md);
+    /* ===== GLOBAL LAYOUT ===== */
+    /* Main containers get full bleed with clean margins */
+    body {
+        padding: 0;
     }
-    
+
+    .terminal-wrapper,
+    .blog-wrapper {
+        width: 95%;
+        max-width: none;
+        margin: 0 auto;
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    /* ===== GLOBAL TYPOGRAPHY ===== */
+    /* Scale fonts fluidly based on viewport width */
+    :root {
+        --font-size: clamp(13px, 4vw, 14px);
+    }
+
+    /* All heading levels use clamp() */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: clamp(20px, 6vw, 28px);
+        line-height: 1.2;
+        margin-bottom: var(--space-md);
+        text-wrap: balance;
+    }
+
+    h1 { font-size: clamp(24px, 7vw, 32px); }
+    h2 { font-size: clamp(20px, 6vw, 28px); }
+    h3 { font-size: clamp(18px, 5.5vw, 24px); }
+    h4 { font-size: clamp(16px, 5vw, 20px); }
+
+    /* Body text scaling */
+    p, span, div:not(.terminal), li, td, th, .bold {
+        font-size: clamp(13px, 4vw, 14px);
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+        hyphens: auto;
+        overflow-wrap: break-word;
+        text-align: left !important;
+    }
+
+    /* Terminal-specific typography */
+    #output .bold.white,
+    #output .bold {
+        font-size: clamp(14px, 5vw, 16px);
+        line-height: 1.4;
+        margin-bottom: var(--space-xs) !important;
+    }
+
+    #output li {
+        margin-bottom: var(--space-xs) !important;
+    }
+
+    #output .cmd {
+        font-size: clamp(13px, 4.5vw, 14px);
+    }
+
+    #output {
+        font-size: clamp(13px, 4vw, 14px);
+        line-height: 1.4;
+        width: 90%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    #output .prompt {
+        font-size: clamp(13px, 4vw, 14px);
+    }
+
+    /* List break handling */
+    #output li,
+    #output ul,
+    #output ol {
+        hyphens: auto;
+        overflow-wrap: break-word;
+    }
+
+    /* Blog heading balance */
+    .blog-title,
+    .post-header .post-title {
+        text-wrap: balance;
+    }
+
+    /* ===== UNIVERSAL ALIGNMENT ===== */
+    /* Force left alignment on mobile */
+    .terminal-title,
+    .terminal-status,
+    .blog-header,
+    .blog-footer,
+    .post-footer,
+    #output,
+    .prose {
+        text-align: left !important;
+    }
+
+    /* ===== COMPONENT STACKING ===== */
+    /* Stack horizontal layouts */
+    .blog-header,
+    .blog-footer,
+    .title-actions {
+        flex-direction: column;
+        gap: var(--space-md);
+        align-items: flex-start;
+    }
+
+    .status-left,
+    .status-center,
+    .status-right {
+        align-items: flex-start;
+    }
+
+    /* ===== TERMINAL STYLING ===== */
     .terminal {
-        /* Use dvh for mobile address bar; fallback to vh */
         height: 85vh;
         height: 85dvh;
         max-height: none;
+        min-height: 90vh;
+        min-height: 90dvh;
         border-radius: var(--radius-md);
+        border-width: 2px;
     }
-    
-    .ascii-art {
-        font-size: 8px;
-        white-space: pre;
-        overflow-x: auto;
+
+    .terminal-title {
+        padding: var(--space-xs) var(--space-sm);
     }
-    
-    .command-shortcuts {
-        flex-wrap: wrap;
+
+    .title-text {
+        font-size: clamp(10px, 3.5vw, 12px);
+        letter-spacing: -0.01em;
     }
-    
+
+    .terminal-body {
+        padding: 0 15px;
+    }
+
+    .terminal-input {
+        padding: 0 15px;
+        min-height: 48px;
+    }
+
+    .input-prompt {
+        margin-right: var(--space-sm);
+    }
+
     .terminal-status {
         font-size: 10px;
+        padding: var(--space-xs) var(--space-sm);
+        gap: var(--space-xs);
     }
-    
+
     .status-center {
         display: none;
+    }
+
+    .status-left,
+    .status-right {
+        gap: var(--space-xs);
+    }
+
+    /* ===== TOUCH TARGETS ===== */
+    #output a {
+        display: inline-flex;
+        padding: var(--space-xs) var(--space-sm);
+        margin: calc(var(--space-xs) * -1) calc(var(--space-sm) * -1);
+        min-height: 44px;
+        min-width: 44px;
+        align-items: center;
+        justify-content: center;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+    }
+
+    .command-shortcuts {
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+        margin-top: var(--space-md);
+    }
+
+    .cmd-shortcut,
+    .cmd-shortcut + .cmd-shortcut {
+        min-height: 44px;
+        min-width: 44px;
+        padding: var(--space-xs) var(--space-md);
+        font-size: clamp(11px, 4vw, 12px);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .help-btn {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    /* ===== ASCII ART SCALING ===== */
+    .ascii-art {
+        font-size: clamp(4px, 2.5vw, 8px);
+        letter-spacing: clamp(-1px, -0.05vw, -0.5px);
+        line-height: 1.1;
+        white-space: pre;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    /* ===== BLOG & PROSE STYLING ===== */
+    .blog-main,
+    .post-content,
+    .prose {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .prose pre,
+    .prose code {
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    /* ===== MOBILE OPTIMIZATIONS ===== */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    a, button, .cmd-shortcut {
+        -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 25%, transparent);
     }
 }
 
@@ -523,43 +725,43 @@ a:hover {
     :root {
         --font-size: 13px;
     }
-    
+
     .terminal-wrapper {
         padding: var(--space-sm);
     }
-    
+
     .terminal {
         /* Use dvh for mobile address bar; fallback to vh */
         height: 90vh;
         height: 90dvh;
         border-radius: var(--radius-sm);
     }
-    
+
     .title-text {
         font-size: 11px;
     }
-    
+
     .ascii-art {
         font-size: 5px;
         letter-spacing: -1px;
         white-space: pre;
         overflow-x: auto;
     }
-    
+
     .cmd-shortcut {
         padding: var(--space-xs) var(--space-sm);
         font-size: 11px;
     }
-    
+
     .terminal-status {
         font-size: 9px;
         padding: var(--space-xs) var(--space-sm);
     }
-    
+
     .status-left {
         display: none;
     }
-    
+
     #command-input {
         font-size: 16px; /* Prevents mobile browser zoom on focus */
     }

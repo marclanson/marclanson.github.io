@@ -49,7 +49,6 @@ const commands = {
         '  <span class="muted">--- about ---</span>',
         '  <span class="cmd">whoami</span>        who is marc lanson',
         '  <span class="cmd">tldr</span>          ultra-short bio',
-        '  <span class="cmd">prev</span>          previous work',
         '  <span class="cmd">projects</span>      notable projects',
         "",
         '  <span class="muted">--- content ---</span>',
@@ -99,30 +98,14 @@ const commands = {
     desc: "alias for whoami",
     fn: () => commands.whoami.fn(),
   },
-  prev: {
-    desc: "previous work",
-    fn: () => {
-      return `
-  <span class="bold white">previously:</span>
-
-  • founder, makerpad - sold to zapier (in 18 months) [2019-2021]
-  • sequoia & a16z scout [2021-2025]
-  • product hunt [2015-2017]
-`;
-    },
-  },
-  history: {
-    desc: "alias for prev",
-    fn: () => commands.prev.fn(),
-  },
   contact: {
     desc: "find me",
     fn: () => {
       return `
   <span class="bold white">contact:</span>
 
-  • <a href="https://x.com/marclanson" target="_blank" rel="noopener">twitter/x</a>
   • <a href="https://linkedin.com/in//marclanson/" target="_blank" rel="noopener">linkedin</a>
+  • <a href="https://x.com/marclanson" target="_blank" rel="noopener">twitter/x</a>
 
 `;
     },
