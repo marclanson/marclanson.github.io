@@ -2,7 +2,7 @@
 const state = {
   history: [],
   historyIndex: -1,
-  theme: localStorage.getItem("terminal-theme") || "midnight",
+  theme: localStorage.getItem("terminal-theme") || "as400",
   commandCount: 0,
 };
 
