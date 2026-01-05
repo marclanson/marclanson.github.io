@@ -312,7 +312,7 @@ const commands = {
     },
   },
   tldr: {
-    desc: "ultra-short bio",
+    desc: "short bio",
     fn: () => {
       return `
   <span class="bold white">marc lanson</span> — reengineering financial ops with ai.
