@@ -54,6 +54,7 @@ const commands = {
         '  <span class="muted">--- content ---</span>',
         '  <span class="cmd">tools</span>         tools i use daily',
         '  <span class="cmd">blog</span>          read the blog',
+        '  <span class="cmd">games</span>         play games',
         '  <span class="cmd">search [term]</span> search site content',
         "",
         '  <span class="muted">--- contact ---</span>',
@@ -76,7 +77,7 @@ const commands = {
       return `
   <span class="bold white">marc lanson</span>
   <span class="bold white">financial services operations specialist</span>
-  technically non-technical, but loves to code and build.
+  technically non-technical, but I love to code and build.
 
   <span class="bold white">experience:</span>
   macquarie bank, nomura, barclays, socgen, goldman sachs
