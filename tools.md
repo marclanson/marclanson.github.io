@@ -1,7 +1,6 @@
 ### tools i use
 - github
-- chatgpt
+- gemini
 - factory
-- slack
 - cursor
 - replit
